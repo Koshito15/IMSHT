@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="kiosk">
+    <div class="payment-box" id="payment-box">
+      <h2>Complete Your Payment</h2>
+      <p class="amount">Total: ₱<span id="payment-total">0</span></p>
+
+      <!-- QR Code Container -->
+      <div id="qr-container" class="qr-code">
+        <img id="gcash-qr" src="" alt="GCash QR">
+      </div>
+
+      <!-- Buttons -->
+      <button id="gcash-btn">Pay with GCash</button>
+    </div>
+  </div>
+
+  <!-- Voucher Modal -->
+  <div id="voucher-overlay">
+    <div id="voucher-box">
+      <h2 id="voucher-title">🔄 Verifying Payment...</h2>
+      <p id="voucher-message">Please wait while we confirm your payment.</p>
+      <div id="voucher-details" style="display:none;">
+        <p>Amount Paid: ₱<span id="voucher-amount"></span></p>
+        <p>Your Code:</p>
+        <div id="voucher-code"></div>
+        <button id="close-btn" onclick="returnHome()">Return to Home</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
