@@ -200,37 +200,6 @@ function generateVoucherCode() {
   ).join("");
 }
 
-// ---------------------- PAYMENT (PayMongo) ----------------------
-const qrMap = {
-  5: "gcash-5.jpg",
-  10: "gcash-10.jpg",
-  15: "gcash-15.jpg",
-  20: "gcash-20.jpg",
-  25: "gcash-25.jpg",
-  30: "gcash-30.jpg",
-  35: "gcash-35.jpg",
-  40: "gcash-40.jpg",
-  45: "gcash-45.jpg",
-  50: "gcash-50.jpg",
-  55: "gcash-55.jpg",
-  60: "gcash-60.jpg",
-  65: "gcash-65.jpg",
-  70: "gcash-70.jpg",
-  75: "gcash-75.jpg"
-};
-
-function setPaymentQR(amount) {
-  const qrImg = document.getElementById("gcash-qr");
-  if (!qrImg) return;
-  const amt = Number(amount) || 0;
-  if (qrMap[amt]) {
-    qrImg.src = qrMap[amt];
-  } else {
-    qrImg.src = "";
-    qrImg.alt = "No QR available for this amount";
-  }
-}
-
 // GCash pay button handler (on payment.html)
 document.getElementById("gcash-btn")?.addEventListener("click", async () => {
   try {
@@ -406,4 +375,5 @@ function renderVoucherList() {
       container.appendChild(item);
     }
   });
+
 }
